@@ -8,7 +8,7 @@
         <main>
             <div class="intro">
                 <div class="item2">
-                    <img class="picture" {src1} alt="">
+                    <img class="picture" src = "./public/img/myPhoto.jpg" alt="">
                 </div>
                 <div class="item3">
                     <img class="text" {src2}>
