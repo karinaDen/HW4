@@ -16,19 +16,19 @@
 </script>
 <main>
     <body>
-    <div class="flexbox-container">
-        <div class="flexbox1">
+    <div class="grid-container3">
+        <div class="item1">
             psst, want some dog pictures? click on button👽
         </div>
-        <div class="flexbox2">
+        <div class="item2">
             <button id="generate1" on:click = {click}>
                 click
             </button>
         </div>
 
-        <div class="image-container">
+        <div class="item3">
 
-            <img id = "image" src="">
+            <img id = "dogImage" src="">
         </div>
 
 
@@ -48,17 +48,35 @@
 
         background: #FFECEB;
     }
-    .flexbox-container{
-        display: flex;
-        flex-direction: column;
+    .item1 {
         align-items: center;
-        top: 74px;
-    }
-    .flexbox1{
-        display: flow-root;
+        grid-area: header;
         text-align: center;
-        margin-top: 20px;
-        font-size: 30px;
+
+    }
+
+    .item2 {
+        align-items: center;
+        grid-area: main;
+        text-align: center;
+
+    }
+    .item3{
+        align-items: center;
+        grid-area: photo;
+        text-align: center;
+
+    }
+
+    .grid-container3 {
+        background-repeat: repeat;
+        display: grid;
+        align-items: center;
+        grid-template-areas:
+                    'header '
+                    'main '
+                    'photo ';
+
     }
 
 </style>

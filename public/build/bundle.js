@@ -588,22 +588,22 @@ var app = (function () {
     			t3 = space();
     			div2 = element("div");
     			img = element("img");
-    			attr_dev(div0, "class", "flexbox1 svelte-hi2kat");
-    			add_location(div0, file$1, 15, 8, 425);
+    			attr_dev(div0, "class", "item1 svelte-kv37v2");
+    			add_location(div0, file$1, 15, 8, 409);
     			attr_dev(button, "id", "generate1");
-    			add_location(button, file$1, 19, 12, 570);
-    			attr_dev(div1, "class", "flexbox2");
-    			add_location(div1, file$1, 18, 8, 534);
-    			attr_dev(img, "id", "image");
+    			add_location(button, file$1, 19, 12, 548);
+    			attr_dev(div1, "class", "item2 svelte-kv37v2");
+    			add_location(div1, file$1, 18, 8, 515);
+    			attr_dev(img, "id", "dogImage");
     			if (!src_url_equal(img.src, img_src_value = "")) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$1, 26, 12, 730);
-    			attr_dev(div2, "class", "image-container");
-    			add_location(div2, file$1, 24, 8, 685);
-    			attr_dev(div3, "class", "flexbox-container svelte-hi2kat");
-    			add_location(div3, file$1, 14, 4, 384);
-    			attr_dev(body, "class", "svelte-hi2kat");
-    			add_location(body, file$1, 13, 4, 372);
-    			add_location(main, file$1, 12, 0, 360);
+    			add_location(img, file$1, 26, 12, 699);
+    			attr_dev(div2, "class", "item3 svelte-kv37v2");
+    			add_location(div2, file$1, 24, 8, 664);
+    			attr_dev(div3, "class", "grid-container3 svelte-kv37v2");
+    			add_location(div3, file$1, 14, 4, 370);
+    			attr_dev(body, "class", "svelte-kv37v2");
+    			add_location(body, file$1, 13, 4, 358);
+    			add_location(main, file$1, 12, 0, 346);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -621,7 +621,7 @@ var app = (function () {
     			append_dev(div2, img);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*call*/ ctx[0], false, false, false);
+    				dispose = listen_dev(button, "click", /*click*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -650,17 +650,17 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Project', slots, []);
 
-    	let getData = async () => {
-    		let response = await fetch("https://random.dog/woof.json");
-    		let myInpt = await response.json();
-    		console.log(myInpt.url);
-    		return myInpt.url;
+    	let getAPI = async () => {
+    		let res = await fetch("https://random.dog/woof.json");
+    		let Json = await res.json();
+    		console.log(Json.url);
+    		return Json.url;
     	};
 
-    	async function call() {
+    	async function click() {
     		event.preventDefault();
-    		let img = document.getElementById('image');
-    		img.src = await getData();
+    		let pic = document.getElementById('dogImage');
+    		pic.src = await getAPI();
     	}
 
     	const writable_props = [];
@@ -669,17 +669,17 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Project> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ getData, call });
+    	$$self.$capture_state = () => ({ getAPI, click });
 
     	$$self.$inject_state = $$props => {
-    		if ('getData' in $$props) getData = $$props.getData;
+    		if ('getAPI' in $$props) getAPI = $$props.getAPI;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [call];
+    	return [click];
     }
 
     class Project extends SvelteComponentDev {
