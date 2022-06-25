@@ -706,9 +706,11 @@ var app = (function () {
     	let div2;
     	let div0;
     	let img0;
+    	let img0_src_value;
     	let t;
     	let div1;
     	let img1;
+    	let img1_src_value;
 
     	const block = {
     		c: function create() {
@@ -722,23 +724,23 @@ var app = (function () {
     			div1 = element("div");
     			img1 = element("img");
     			attr_dev(img0, "class", "picture svelte-nk59cs");
-    			attr_dev(img0, "src1", /*src1*/ ctx[0]);
+    			if (!src_url_equal(img0.src, img0_src_value = /*src1*/ ctx[0])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "");
-    			add_location(img0, file$1, 10, 20, 265);
+    			add_location(img0, file$1, 10, 20, 251);
     			attr_dev(div0, "class", "item3 svelte-nk59cs");
-    			add_location(div0, file$1, 9, 16, 224);
+    			add_location(div0, file$1, 9, 16, 210);
     			attr_dev(img1, "class", "text svelte-nk59cs");
-    			attr_dev(img1, "src2", /*src2*/ ctx[1]);
-    			add_location(img1, file$1, 13, 20, 383);
+    			if (!src_url_equal(img1.src, img1_src_value = /*src2*/ ctx[1])) attr_dev(img1, "src", img1_src_value);
+    			add_location(img1, file$1, 13, 20, 373);
     			attr_dev(div1, "class", "item2 svelte-nk59cs");
-    			add_location(div1, file$1, 12, 16, 342);
+    			add_location(div1, file$1, 12, 16, 332);
     			attr_dev(div2, "class", "intro");
-    			add_location(div2, file$1, 8, 12, 187);
+    			add_location(div2, file$1, 8, 12, 173);
     			attr_dev(div3, "class", "grid-container2 svelte-nk59cs");
-    			add_location(div3, file$1, 6, 4, 142);
+    			add_location(div3, file$1, 6, 4, 128);
     			attr_dev(body, "class", "svelte-nk59cs");
-    			add_location(body, file$1, 5, 4, 130);
-    			add_location(main, file$1, 4, 0, 118);
+    			add_location(body, file$1, 5, 4, 116);
+    			add_location(main, file$1, 4, 0, 104);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -776,8 +778,8 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('About', slots, []);
-    	let src1 = '../public/img/myPhoto.jpg';
-    	let src2 = '../public/img/Briefly_about_me.svg';
+    	let src1 = '../img/myPhoto.jpg';
+    	let src2 = '../img/Briefly_about_me.svg';
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {

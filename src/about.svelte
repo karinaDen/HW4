@@ -1,6 +1,6 @@
 <script>
-    let src1 = '../public/img/myPhoto.jpg'
-    let src2 = '../public/img/Briefly_about_me.svg'
+    let src1 = '../img/myPhoto.jpg'
+    let src2 = '../img/Briefly_about_me.svg'
 </script>
 <main>
     <body>
@@ -8,10 +8,10 @@
 
             <div class="intro">
                 <div class="item3">
-                    <img class="picture" {src1} alt="">
+                    <img class="picture" src={src1} alt="">
                 </div>
                 <div class="item2">
-                    <img class="text" {src2}>
+                    <img class="text" src={src2}>
                 </div>
             </div>
     </div>
