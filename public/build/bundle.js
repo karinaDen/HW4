@@ -590,15 +590,14 @@ var app = (function () {
     			img = element("img");
     			attr_dev(div0, "class", "item1 svelte-kv37v2");
     			add_location(div0, file$2, 15, 8, 409);
-    			attr_dev(button, "id", "generate1");
     			add_location(button, file$2, 19, 12, 548);
     			attr_dev(div1, "class", "item2 svelte-kv37v2");
     			add_location(div1, file$2, 18, 8, 515);
     			attr_dev(img, "id", "dogImage");
     			if (!src_url_equal(img.src, img_src_value = "")) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$2, 26, 12, 699);
+    			add_location(img, file$2, 26, 12, 684);
     			attr_dev(div2, "class", "item3 svelte-kv37v2");
-    			add_location(div2, file$2, 24, 8, 664);
+    			add_location(div2, file$2, 24, 8, 649);
     			attr_dev(div3, "class", "grid-container3 svelte-kv37v2");
     			add_location(div3, file$2, 14, 4, 370);
     			attr_dev(body, "class", "svelte-kv37v2");

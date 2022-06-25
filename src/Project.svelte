@@ -21,7 +21,7 @@
             psst, want some dog pictures? click on button👽
         </div>
         <div class="item2">
-            <button id="generate1" on:click = {click}>
+            <button on:click = {click}>
                 click
             </button>
         </div>
