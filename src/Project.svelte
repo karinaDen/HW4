@@ -1,17 +1,17 @@
 <script lang="ts">
-    interface Inpt {
+    interface Inptut {
         url: string;
     }
-    let getData = async () => {
-        let response = await fetch("https://random.dog/woof.json");
-        let myInpt: Inpt = await response.json();
-        console.log(myInpt.url);
-        return myInpt.url;
+    let getAPI = async () => {
+        let res = await fetch("https://random.dog/woof.json");
+        let Json: Inptut = await res.json();
+        console.log(Json.url);
+        return Json.url;
     }
-    async function call() {
+    async function click() {
         event.preventDefault();
-        let img = document.getElementById('image') as HTMLImageElement;
-        img.src   = await getData();
+        let pic = document.getElementById('dogImage') as HTMLImageElement;
+        pic.src   = await getAPI();
     }
 </script>
 <main>
@@ -21,7 +21,7 @@
             psst, want some dog pictures? click on button👽
         </div>
         <div class="flexbox2">
-            <button id="generate1" on:click = {call}>
+            <button id="generate1" on:click = {click}>
                 click
             </button>
         </div>
